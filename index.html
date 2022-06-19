@@ -8,10 +8,18 @@
   <title>Fibonacci Calculator</title>
 </head>
 <body>
-  <div class="card">
-    <div class="card-body">
-      The Fibonacci of <span id="index"></span> is <span id="number"></span>
+  <nav class="navbar navbar-light mb-4 bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Fibonacci Calculator</span>
     </div>
-  </div>
+  </nav>
+    The Fibonacci of
+  <input type="number" name="Input" value="" id="userInput" />
+    is
+  <input type="number" name="Answer" id="userAnswer" />
+    -->
+  <input type="button" value="Calculate"
+    onclick="document.getElementById('userAnswer').value=calculate(document.getElementById('userInput').value);" /><br>
+  <script src="./fibonacci.js"></script>
 </body>
 </html>

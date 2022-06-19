@@ -1,18 +1,7 @@
-const fibonacci = (n) => {
-  let a = 0,
-    b = 1,
-    c = n;
-
-  for (let i = 2; i <= n; i++) {
-    c = a + b;
-    a = b;
-    b = c;
+function calculate(n) {
+  if (n < 2) {
+    return 1;
+  } else {
+    return calculate(n - 2) + calculate(n - 1);
   }
-
-  return c;
-  
-};
-
-const number = document.getElementById('number');
-number.innerText = c;
-
+}
