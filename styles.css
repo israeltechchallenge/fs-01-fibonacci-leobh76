@@ -1,0 +1,9 @@
+.form-outline {
+  width: 80px;
+}
+
+.text-fibo {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}

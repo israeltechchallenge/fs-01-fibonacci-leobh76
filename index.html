@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
+  <link href="./styles.css" rel="stylesheet" />
   <title>Fibonacci Calculator</title>
 </head>
 
@@ -18,10 +19,15 @@
   <header>
     <div class="p-5 text-left">
       <h1 class="mb-3">Fibonacci Calculator</h1>
-      The Fibonacci of
-      <span id="fib-index"></span>
-      <button type="button" class="btn btn-primary px-3 pb-1 pt-1">is</button>
-      <span id="fib-number"></span>
+      <div class="text-fibo">
+        <p>The Fibonacci of</p>
+        <div class="form-outline">
+          <input type="text" id="form12" class="form-control" />
+          <label class="form-label" for="form12">#</label>
+        </div> <button type="button" class="btn btn-primary px-3 pb-1.5 pt-1.5">is</button>
+        <span id="fib-number"></span>
+      </div>
+    </div>
   </header>
   <script src="./fibonacci.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
