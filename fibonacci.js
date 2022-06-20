@@ -6,5 +6,4 @@ function fibFunction(index) {
 const fibIndex = document.querySelector("#fib-index");
 const fibNumber = document.querySelector("#fib-number");
 
-fibIndex.innerText = 9;
 fibNumber.innerText = fibFunction(9);
