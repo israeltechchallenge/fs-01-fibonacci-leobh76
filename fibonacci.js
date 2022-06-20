@@ -1,7 +1,10 @@
-function calculate(n) {
-  if (n < 2) {
-    return 1;
-  } else {
-    return calculate(n - 2) + calculate(n - 1);
-  }
+function fibFunction(index) {
+  if (index < 2) return index;
+  return fibFunction(index - 1) + fibFunction(index - 2);
 }
+
+const fibIndex = document.querySelector("#fib-index");
+const fibNumber = document.querySelector("#fib-number");
+
+fibIndex.innerText = 9;
+fibNumber.innerText = fibFunction(9);
