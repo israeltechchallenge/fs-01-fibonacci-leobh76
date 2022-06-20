@@ -1,9 +1,14 @@
 .form-outline {
   width: 80px;
+  margin: 0 10px 0 10px;
 }
 
-.text-fibo {
+.text-fib {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+}
+
+#button {
+  margin-right: 10px;
 }

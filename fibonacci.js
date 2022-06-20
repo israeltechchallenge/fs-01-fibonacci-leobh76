@@ -1,9 +1,13 @@
-function fibFunction(index) {
-  if (index < 2) return index;
-  return fibFunction(index - 1) + fibFunction(index - 2);
-}
-
-const fibIndex = document.querySelector("#fib-index");
+const fibInput = document.querySelector("#form12");
+const button = document.querySelector("#button");
 const fibNumber = document.querySelector("#fib-number");
 
-fibNumber.innerText = fibFunction(9);
+const fibFunction = (n) => {
+  if (n < 2) {
+    return n;
+  } else return fibFunction(n - 1) + fibFunction(n - 2);
+};
+
+button.addEventListener("click", () => {
+  fibNumber.innerText = fibFunction(parseInt(fibInput.value));
+});
