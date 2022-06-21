@@ -1,13 +1,18 @@
-const fibInput = document.querySelector("#form12");
-const button = document.querySelector("#button");
+const fibInput = document.getElementById("form12");
+const button = document.getElementById("button");
 const fibNumber = document.querySelector("#fib-number");
 
-const fibFunction = (n) => {
-  if (n < 2) {
-    return n;
-  } else return fibFunction(n - 1) + fibFunction(n - 2);
-};
+function giveResults() {
+  const index = fibInput.value;
 
-button.addEventListener("click", () => {
-  fibNumber.innerText = fibFunction(parseInt(fibInput.value));
-});
+  fetch(`${"http://localhost:5050/fibonacci/"}${index}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const result = data.result;
+      fibNumber.innerText = result;
+    });
+}
+
+button.addEventListener("click", giveResults);
