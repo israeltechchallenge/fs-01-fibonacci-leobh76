@@ -2,7 +2,7 @@ const fibInput = document.getElementById("form12");
 const button = document.getElementById("button");
 const fibNumber = document.querySelector("#fib-number");
 
-function giveResults() {
+function getFibNumber() {
   const index = fibInput.value;
 
   fetch(`${"http://localhost:5050/fibonacci/"}${index}`)
@@ -15,4 +15,4 @@ function giveResults() {
     });
 }
 
-button.addEventListener("click", giveResults);
+button.addEventListener("click", getFibNumber);

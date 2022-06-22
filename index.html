@@ -17,17 +17,20 @@
 
 <body>
   <header>
-    <div class="p-5 text-left">
-      <h1 class="mb-3">Fibonacci Calculator</h1>
-      <div class="text-fib">
-        <p>The Fibonacci of</p>
+    <div class="p-5 pb-5 text-left d-flex-column">
+      <p class="display-4 mb-5"><strong>Fibonacci Calculator</p></strong>
+      <div class="text-fib d-flex">
+        <p class="p-2">The Fibonacci of</p>
         <div class="form-outline">
           <input type="number" id="form12" class="form-control" />
           <label class="form-label" for="form12">#</label>
         </div>
-        <button type="button" id="button" class="btn btn-primary px-3 pb-1.5 pt-1.5">is</button>
-        <span id="fib-number"></span>
+        <button type="button" id="button" class="btn btn-primary px-3 pb-1.5 pt-1.5 me-3">is</button>
+        <p class="h5 d-flex justify-content-center mt-2" id="fib-number"></p>
+        <div class="spinner-border" role="status" id="spinner">
+        </div>
       </div>
+      <p class="display-5 mt-5 ">Results</h2>
     </div>
   </header>
   <script src="./fibonacci.js"></script>
