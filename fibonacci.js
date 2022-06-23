@@ -26,24 +26,25 @@ function getFibNumber() {
         if (!response.ok) {
           response.text().then((error) => {
             console.log("Server error:" + error);
-            fibNumber.innerText = error;
+            fibNumber.innerText = `Server Error: ${error}`;
+            fibNumber.classList.add("text-danger");
           });
         } else {
           return response.json();
         }
       })
       .then((data) => {
+        fibNumber.classList.remove("text-danger");
         const result = data.result;
         fibNumber.innerText = result;
       });
   }
 }
 
-// event listeners for the button
 fibInput.addEventListener("focus", clearInput);
 button.addEventListener("click", getFibNumber);
 
-// function to clear input when focusing it again
+// clear input when focused
 function clearInput() {
   fibInput.value = null;
   fibNumber.innerText = null;
