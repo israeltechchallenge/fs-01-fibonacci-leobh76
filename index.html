@@ -32,7 +32,14 @@
         </div>
       </div>
       <p class="h6 d-none d-flex mt-2 ms-5 text-danger" id="error-50">Can't be larger than 50.</p>
-      <p class="display-5 mt-5 d-none">Results</h2>
+      <div class="results d-flex flex-row align-items-baseline mt-5">
+        <p class="display-5 me-3 mb-4">Results</h2>
+        <div class="spinner-border d-none" role="status" id="spinner-results">
+        </div>
+      </div>
+      <div class="results-log">
+        <p class="mb-2 text-decoration-underline" id="result-line"></p>
+      </div>
     </div>
   </header>
   <script src="./fibonacci.js"></script>

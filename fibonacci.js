@@ -1,9 +1,14 @@
+const resultLog = document.getElementById("result-line");
+
+window.onload = function displayResultList() {
+    
+}
+
 const fibInput = document.getElementById("form12");
 const button = document.getElementById("button");
 const fibNumber = document.querySelector("#fib-number");
 const spinner = document.getElementById("spinner");
 const error50 = document.getElementById("error-50");
-const error42 = document.getElementById("error-42");
 
 function getFibNumber() {
   const index = fibInput.value;
