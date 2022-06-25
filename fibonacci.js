@@ -1,14 +1,30 @@
-const resultLog = document.getElementById("result-line");
-
-window.onload = function displayResultList() {
-    
-}
-
 const fibInput = document.getElementById("form12");
 const button = document.getElementById("button");
 const fibNumber = document.querySelector("#fib-number");
 const spinner = document.getElementById("spinner");
 const error50 = document.getElementById("error-50");
+const resultLog = document.getElementById("result-line");
+const resultsSpinner = document.getElementById("spinner-results");
+
+window.addEventListener("load", getResultsList);
+
+function getResultsList() {
+  resultsSpinner.classList.remove("d-none");
+  fetch("http://localhost:5050/getFibonacciResults")
+    .then((response) => response.json())
+    .then((data) => {
+      resultsSpinner.classList.add("d-none");
+      let list = data.results;
+      for (item of list) {
+        let newLine = document.createElement("div");
+        newLine.innerHTML = `The Fibonnaci of <b>${item.number}</b> is <b>${
+          item.result
+        }</b>. Calculated at: ${new Date(item.createdDate)}`;
+        resultLog.appendChild(newLine);
+        newLine.className = "mb-2 text-decoration-underline";
+      }
+    });
+}
 
 function getFibNumber() {
   const index = fibInput.value;
