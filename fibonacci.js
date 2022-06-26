@@ -29,7 +29,6 @@ function getResultsList() {
   // Function to calculate the Fibonacci number:
   function getFibNumber() {
     const index = fibInput.value;
-    
     if (index > 50) {
     // if input is more than 50
     spinner.classList.remove("d-none");
@@ -40,25 +39,24 @@ function getResultsList() {
   } else {
     // if it is 50 or less
     spinner.classList.remove("d-none");
-    setTimeout(() => {
-      spinner.classList.add("d-none");
-    }, 500);
     fetch(`${"http://localhost:5050/fibonacci/"}${index}`)
     .then((response) => {
       if (!response.ok) {
         response.text().then((error) => {
-            console.log("Server error:" + error);
-            fibNumber.innerText = `Server Error: ${error}`;
-            fibNumber.classList.add("text-danger");
-          });
-        } else {
-          return response.json();
-        }
-      })
-      .then((data) => {
-        fibNumber.classList.remove("text-danger");
-        const result = data.result;
-        fibNumber.innerText = result;
+          console.log("Server error:" + error);
+          fibNumber.innerText = `Server Error: ${error}`;
+          fibNumber.classList.add("text-danger");
+          spinner.classList.add("d-none");
+        });
+      } else {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      fibNumber.classList.remove("text-danger");
+      const result = data.result;
+      fibNumber.innerText = result;
+      spinner.classList.add("d-none");
       });
   }
 }
@@ -78,7 +76,7 @@ button.addEventListener("click", getFibNumber);
 // Function to check if checkbox is selected or not
 function checkboxChecker() {
   const checkbox = document.getElementById("flexCheckDefault");
-  if (checkbox.checked != false) {
+  if (checkbox.checked === true) {
     console.log("Checkbox checked");
   } else {
     console.log("Not Checked");
