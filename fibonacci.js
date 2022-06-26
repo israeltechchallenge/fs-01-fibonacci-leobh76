@@ -75,3 +75,12 @@ window.addEventListener("load", getResultsList);
 fibInput.addEventListener("focus", clearInput);
 button.addEventListener("click", getFibNumber);
 
+// Function to check if checkbox is selected or not
+function checkboxChecker() {
+  const checkbox = document.getElementById("flexCheckDefault");
+  if (checkbox.checked != false) {
+    console.log("Checkbox checked");
+  } else {
+    console.log("Not Checked");
+  }
+}
