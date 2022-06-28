@@ -18,11 +18,7 @@ fibInput.addEventListener("focus", clearInput);
 buttonServer.addEventListener("click", getFibNumber);
 
 buttonLocal.addEventListener("click", () => {
-  spinner.classList.remove("d-none");
-  setTimeout(() => {
-    spinner.classList.add("d-none");
-    fibNumber.innerText = fibFunction(parseInt(fibInput.value));
-  }, 200);
+  fibNumber.innerText = fibFunction(parseInt(fibInput.value));
 });
 
 // Swapping between local and server buttons
@@ -41,18 +37,26 @@ checkBox.addEventListener("change", () => {
 // Function to calculate the Fibonacci number LOCALLY:
 function fibFunction(n) {
   if (n < 0) {
+    spinner.classList.remove("d-none");
     error00.classList.remove("d-none");
     fibNumber.classList.add("d-none");
+    spinner.classList.add("d-none");
   } else if (n < 2) {
+    spinner.classList.remove("d-none");
     error00.classList.add("d-none");
+    spinner.classList.add("d-none");
     return n;
   } else if (n > 50) {
+    spinner.classList.remove("d-none");
     error00.classList.add("d-none");
     error50.classList.remove("d-none");
     fibNumber.classList.add("d-none");
+    spinner.classList.add("d-none");
   } else {
+    spinner.classList.remove("d-none");
     error00.classList.add("d-none");
     fibNumber.classList.remove("d-none");
+    spinner.classList.add("d-none");
     return fibFunction(n - 1) + fibFunction(n - 2);
   }
 }
@@ -63,10 +67,8 @@ function getFibNumber() {
   if (index > 50) {
     // if input is more than 50
     spinner.classList.remove("d-none");
-    setTimeout(() => {
-      spinner.classList.add("d-none");
-      error50.classList.remove("d-none");
-    }, 500);
+    spinner.classList.add("d-none");
+    error50.classList.remove("d-none");
   } else {
     // if it is 50 or less
     spinner.classList.remove("d-none");
@@ -107,7 +109,6 @@ function getResultsList() {
   fetch("http://localhost:5050/getFibonacciResults")
     .then((response) => response.json())
     .then((data) => {
-      resultsSpinner.classList.add("d-none");
       let list = data.results;
       for (item of list) {
         let newLine = document.createElement("div");
@@ -115,6 +116,7 @@ function getResultsList() {
           item.result
         }</b>. Calculated at: ${new Date(item.createdDate)}`;
         resultLog.appendChild(newLine);
+        resultsSpinner.classList.add("d-none");
         newLine.className = "mb-2 text-decoration-underline";
       }
     });
