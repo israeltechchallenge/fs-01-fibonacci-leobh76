@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.css" rel="stylesheet" />
+  <link href="./styles.css" rel="stylesheet" />
+  <title>Fibonacci Calculator</title>
+</head>
+<body>
+  <header>
+    <div class="p-5 pb-5 text-left d-flex-column">
+      <p class="display-4 mb-5"><strong>Fibonacci Calculator</p></strong>
+      <div class="text-fib d-flex">
+        <p class="h4">The Fibonacci of</p>
+        <div class="form-outline">
+          <input type="number" id="form12" class="form-control" />
+          <label class="form-label" for="form12">#</label>
+        </div>
+        <button type="button" id="button-local" class="btn btn-primary px-3 pb-1.5 pt-1.5 me-3">is</button>
+        <button type="button" id="button-server" class="btn btn-primary px-3 pb-1.5 pt-1.5 me-3 d-none">is</button>
+        <p class="h5 d-flex justify-content-center mt-2 text-decoration-underline" id="fib-number"></p>
+        <p class="p-5 d-flex d-none justify-content-center mt-2" id="error-42"></p>
+        <div class="spinner-border d-none" role="status" id="spinner">
+        </div>
+      </div>
+      <p class="h6 d-none d-flex mt-2 ms-5 text-danger" id="error-50">Can't be larger than 50.</p>
+      <p class="h6 d-none d-flex mt-2 ms-5 text-danger" id="error-00">Can't be less than 0.</p>
+      <div class="form-check mt-3 ms-2">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+        <label class="form-check-label" for="flexCheckDefault">Save Calculation</label>
+      </div>
+      <div class="results d-flex flex-row align-items-baseline mt-5">
+        <p class="display-5 me-3 mb-3">Results</h2>
+        <div class="spinner-border d-none" role="status" id="spinner-results">
+        </div>
+      </div>
+      <!-- Dropdown sorting - maybe will do geekout
+      <div class="btn-group shadow-2-strong mb-4">
+        <button type="button" class="btn btn-light dropdown-toggle" data-mdb-toggle="dropdown" aria-expanded="false">
+          Sort By
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Number Asc</a></li>
+          <li><a class="dropdown-item" href="#">Number Desc</a></li>
+          <li><a class="dropdown-item" href="#">Date Asc</a></li>
+          <li><a class="dropdown-item" href="#">Date Desc</a></li>
+        </ul>
+      </div> -->
+      <div class="results-log">
+        <p class="mb-2 text-decoration-underline" id="result-line"></p>
+      </div>
+    </div>
+  </header>
+  <script src="./fibonacci.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
+</body>
+</html>

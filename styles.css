@@ -1,0 +1,30 @@
+.form-outline {
+  width: 80px;
+  margin: 0 10px 0 10px;
+}
+
+p {
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.h4 {
+  line-height: 1;
+  margin-bottom: 0;
+  align-self: center;
+}
+
+#fib-number {
+  margin: 0%;
+}
